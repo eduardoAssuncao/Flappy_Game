@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class MoveBehaviour : MonoBehaviour
 {
-    
-    
+    public GameObject Nice;
+    public Text congratulation;
     public float sidewaysForce = 3f;
     public float topwaysForce = 5f;
     public Text text;
@@ -83,6 +83,13 @@ public class MoveBehaviour : MonoBehaviour
             points = points + 10; // incrementa pontuacao       
             text.text = points.ToString();
             Debug.Log("Points:R$ " + points); // imprime uma mensagem no console com a pontuacao
+        }
+
+        if(points == 160)
+        {
+            Nice.SetActive(true);
+            Time.timeScale = 0f;
+            congratulation = text;
         }
 
         /*if (col.transform.tag == "Fuel")
